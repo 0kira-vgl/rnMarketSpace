@@ -4,7 +4,7 @@ import { Button } from "@/components/button";
 import { Input } from "@/components/input";
 import { colors } from "@/styles/colors";
 
-export default function SignIn() {
+export default function SignUp() {
   return (
     <View className="flex-1 items-center justify-center px-12">
       <Image source={LogoImg} className="h-16 w-24" />
