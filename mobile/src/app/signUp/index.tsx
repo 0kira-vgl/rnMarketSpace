@@ -3,38 +3,43 @@ import LogoImg from "@/assets/logo/logo.png";
 import { Button } from "@/components/button";
 import { Input } from "@/components/input";
 import { colors } from "@/styles/colors";
+import { useRouter } from "expo-router";
 
-export default function SignUp() {
+export default function SignIn() {
+  const router = useRouter();
+
   return (
     <View className="flex-1 items-center justify-center px-12">
       <Image source={LogoImg} className="h-16 w-24" />
 
-      <View>
-        <Text className="pb-0.5 pt-4 text-4xl font-semibold text-GRAY-900">
-          marketspace
+      <View className="items-center">
+        <Text className="pb-0.5 pt-4 text-xl font-semibold text-GRAY-900">
+          Boas vindas!
         </Text>
-        <Text className="text-sm text-GRAY-700">
-          Seu espaço de compra e venda
+        <Text className="text-center text-sm text-GRAY-700">
+          Crie sua conta e use o espaço para comprar itens variados e vender
+          seus produtos
         </Text>
       </View>
 
-      <Text className="pb-5 pt-20 text-sm font-medium text-GRAY-800">
-        Acesse sua conta
-      </Text>
+      <Input className="mb-5" placeholder="Nome" />
+
+      <Input className="mb-5" placeholder="E-mail" keyboardType="phone-pad" />
 
       <Input
         className="mb-5"
         placeholder="E-mail"
         keyboardType="email-address"
       />
+
       <Input
         className="mb-10"
         placeholder="Senha"
         secureTextEntry // oculta oq é digitado
       />
 
-      <Button>
-        <Button.Title>Entrar</Button.Title>
+      <Button variant="third">
+        <Button.Title variant="third">Criar</Button.Title>
       </Button>
 
       <View
@@ -48,19 +53,11 @@ export default function SignUp() {
         }}
       />
 
-      <View
-        style={{
-          borderTopEndRadius: 20,
-          borderTopStartRadius: 20,
-        }}
-        className="w-full items-center rounded-full"
-      >
-        <Text className="mb-5 text-sm text-GRAY-700">
-          Ainda não tem acesso?
-        </Text>
+      <View className="w-full items-center rounded-full">
+        <Text className="mb-5 text-sm text-GRAY-700">Já tem uma conta?</Text>
 
-        <Button variant="secondary">
-          <Button.Title variant="secondary">Criar uma conta</Button.Title>
+        <Button variant="secondary" onPress={() => router.back()}>
+          <Button.Title variant="secondary">Ir para o login</Button.Title>
         </Button>
       </View>
     </View>

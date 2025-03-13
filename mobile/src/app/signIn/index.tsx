@@ -3,8 +3,11 @@ import LogoImg from "@/assets/logo/logo.png";
 import { Button } from "@/components/button";
 import { Input } from "@/components/input";
 import { colors } from "@/styles/colors";
+import { useRouter } from "expo-router";
 
 export default function SignIn() {
+  const router = useRouter();
+
   return (
     <View className="flex-1 items-center justify-center px-12">
       <Image source={LogoImg} className="h-16 w-24" />
@@ -59,7 +62,7 @@ export default function SignIn() {
           Ainda não tem acesso?
         </Text>
 
-        <Button variant="secondary">
+        <Button variant="secondary" onPress={() => router.navigate("/signUp")}>
           <Button.Title variant="secondary">Criar uma conta</Button.Title>
         </Button>
       </View>
