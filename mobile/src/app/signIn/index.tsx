@@ -36,7 +36,7 @@ export default function SignIn() {
         secureTextEntry // oculta oq é digitado
       />
 
-      <Button>
+      <Button onPress={() => router.navigate("/_sitemap")}>
         <Button.Title>Entrar</Button.Title>
       </Button>
 

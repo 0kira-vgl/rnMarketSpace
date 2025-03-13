@@ -1,6 +1,6 @@
 import SignIn from "./signIn";
 
-export default function Home() {
+export default function App() {
   return (
     <>
       <SignIn />
